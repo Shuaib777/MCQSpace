@@ -18,6 +18,13 @@ const FinalPage = ({ marks, selectedAnswers, questions, handleReset }) => {
       </button>
       {questions.map((question, questionsIndex) => (
         <div key={questionsIndex} className="question-block">
+          <p
+            className={`${
+              selectedAnswers[questionsIndex] ? "attempted" : "not-attempted"
+            }`}
+          >
+            {selectedAnswers[questionsIndex] ? "Attempted" : "Not Attempted"}
+          </p>
           <h3>{question.question}</h3>
           {question.options.map((option, index) => (
             <div

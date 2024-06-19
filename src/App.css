@@ -51,11 +51,16 @@ body {
   margin-bottom: 1em;
 }
 
-.question-container h2,
-.final-page h2,
-.final-page h3 {
+.question-container h2 {
   font-size: 1.75em;
   margin-bottom: 60px;
+}
+
+.question-container .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
 }
 
 .options-container {
@@ -104,6 +109,19 @@ button:hover {
   transform: scale(1.1);
 }
 
+.final-page .attempted {
+  color: #5da96e;
+}
+
+.final-page .not-attempted {
+  color: #943e47;
+}
+
+.final-page h3 {
+  font-size: 1.75em;
+  margin-bottom: 30px;
+}
+
 .final-page h2 {
   font-size: 2em;
   margin-bottom: 30px;
@@ -146,4 +164,56 @@ button:hover {
 
 .animated-fade-in {
   animation: fadeIn 0.5s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+  .info-container h1 {
+    font-size: 2em;
+  }
+
+  .info-container p {
+    font-size: 1em;
+  }
+
+  .question-container h2,
+  .final-page h3,
+  .final-page h2 {
+    font-size: 1.5em;
+  }
+
+  .option-label {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-container h1 {
+    font-size: 1.75em;
+  }
+
+  .info-container p {
+    font-size: 0.9em;
+  }
+
+  .question-container h2,
+  .final-page h3,
+  .final-page h2 {
+    font-size: 1.25em;
+  }
+
+  .option-label {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
 }

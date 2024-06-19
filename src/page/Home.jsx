@@ -8,10 +8,10 @@ const Home = () => {
     <div className="landing-page">
       <div className="info-container">
         <h1>Welcome to the Space Quiz!</h1>
-        <p>Test your knowledge about space with our mid-level quiz.</p>
+        <p>Test your knowledge about space</p>
         <p>
-          This quiz consists of 5 questions related to various aspects of space,
-          including planets, stars, and space exploration.
+          This quiz consists of 10 questions related to various aspects of
+          space, including planets, stars, and space exploration.
         </p>
         <p>
           Each time you start the quiz, the questions will appear in a random

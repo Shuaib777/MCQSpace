@@ -10,7 +10,7 @@ const Quiz = () => {
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const navigate = useNavigate();
   const [questions, setQuestions] = useState([]);
-  const totalQuestions = 5;
+  const totalQuestions = 10;
 
   useEffect(() => {
     const startNumber = Math.floor(
