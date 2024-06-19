@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-const Question = ({ question, selectedAnswer, lastIndex }) => {
+const Question = ({
+  question,
+  selectedAnswer,
+  lastIndex,
+  questionNumber,
+  totalQuestions,
+}) => {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleSubmit = () => {
@@ -8,23 +14,27 @@ const Question = ({ question, selectedAnswer, lastIndex }) => {
   };
 
   return (
-    <div>
-      <h1>{question.question}</h1>
-      {question.options.map((option, index) => (
-        <div key={index}>
-          <label>
-            <input
-              type="radio"
-              value={option}
-              checked={selectedOption === option}
-              onChange={(e) => setSelectedOption(e.target.value)}
-              required
-            />
+    <div className="question-container">
+      <h3>
+        {questionNumber} / {totalQuestions}
+      </h3>
+      <h2>{question.question}</h2>
+      <div className="options-container">
+        {question.options.map((option, index) => (
+          <div
+            key={index}
+            className={`option-label ${
+              option === selectedOption ? "selected" : ""
+            }`}
+            onClick={() => setSelectedOption(option)}
+          >
             {option}
-          </label>
-        </div>
-      ))}
-      <button onClick={handleSubmit}>{lastIndex ? "Submit" : "Next"}</button>
+          </div>
+        ))}
+      </div>
+      <button onClick={handleSubmit} className="submit-button">
+        {lastIndex ? "Submit" : "Next"}
+      </button>
     </div>
   );
 };

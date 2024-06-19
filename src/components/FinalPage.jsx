@@ -1,8 +1,6 @@
 import React from "react";
 
-const FinalPage = ({ marks, selectedAnswers, questions }) => {
-  console.log(selectedAnswers);
-
+const FinalPage = ({ marks, selectedAnswers, questions, handleReset }) => {
   const handleSelected = (questionsIndex, option, answer) => {
     if (selectedAnswers[questionsIndex] === option) {
       return selectedAnswers[questionsIndex] === answer ? "right" : "wrong";
@@ -11,28 +9,31 @@ const FinalPage = ({ marks, selectedAnswers, questions }) => {
   };
 
   return (
-    <>
-      <div>{marks}</div>
+    <div className="final-page">
+      <h2>
+        Your Score: {marks} / {questions.length}
+      </h2>
+      <button className="reset-button" onClick={handleReset}>
+        Reset
+      </button>
       {questions.map((question, questionsIndex) => (
-        <div key={questionsIndex}>
-          <h1>{question.question}</h1>
-          {question.options.map((option, index) => {
-            return (
-              <div
-                key={index}
-                className={`${handleSelected(
-                  questionsIndex,
-                  option,
-                  question.answer
-                )} ${option === question.answer ? "right" : ""}`}
-              >
-                {option}
-              </div>
-            );
-          })}
+        <div key={questionsIndex} className="question-block">
+          <h3>{question.question}</h3>
+          {question.options.map((option, index) => (
+            <div
+              key={index}
+              className={`option ${handleSelected(
+                questionsIndex,
+                option,
+                question.answer
+              )} ${option === question.answer ? "right" : ""}`}
+            >
+              {option}
+            </div>
+          ))}
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

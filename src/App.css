@@ -1,6 +1,149 @@
-.right {
-    color: blue;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("./assets/bcg.jpg");
+  background-size: cover;
+  background-position: center;
 }
-.wrong {
-    color: red;
+
+.quiz-page,
+.landing-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.question-container,
+.final-page,
+.info-container {
+  background: transparent;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  padding: 2em;
+  max-width: 700px;
+  width: 100%;
+  margin: 20px;
+  color: white;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.info-container h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.info-container p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.question-container h2,
+.final-page h2,
+.final-page h3 {
+  font-size: 1.75em;
+  margin-bottom: 60px;
+}
+
+.options-container {
+  margin: 1em 0;
+}
+
+.option-label {
+  display: block;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all ease 0.3s;
+}
+
+.option-label:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.03);
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.option-label input {
+  display: none;
+}
+
+.option-label.selected {
+  background-color: rgb(240, 233, 233);
+  color: black;
+}
+
+button {
+  background-color: rgb(240, 233, 233);
+  color: black;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.final-page h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.reset-button {
+  margin-bottom: 25px;
+}
+
+.question-block {
+  border-top: 1px solid white;
+  margin-bottom: 25px;
+}
+
+.option {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option.right {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.option.wrong {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animated-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
 }
