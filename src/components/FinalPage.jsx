@@ -1,4 +1,5 @@
 import React from "react";
+import Share from "./Share";
 
 const FinalPage = ({ marks, selectedAnswers, questions, handleReset }) => {
   const handleSelected = (questionsIndex, option, answer) => {
@@ -10,9 +11,12 @@ const FinalPage = ({ marks, selectedAnswers, questions, handleReset }) => {
 
   return (
     <div className="final-page">
-      <h2>
-        Your Score: {marks} / {questions.length}
-      </h2>
+      <div className="score">
+        <h2>
+          Your Score: {marks} / {questions.length}
+        </h2>
+        <Share />
+      </div>
       <button className="reset-button" onClick={handleReset}>
         Reset
       </button>

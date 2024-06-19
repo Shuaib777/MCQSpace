@@ -5,6 +5,7 @@ body {
   background: url("./assets/bcg.jpg");
   background-size: cover;
   background-position: center;
+  box-sizing: border-box;
 }
 
 .quiz-page,
@@ -123,8 +124,15 @@ button:hover {
 }
 
 .final-page h2 {
+  display: inline-block;
   font-size: 2em;
   margin-bottom: 30px;
+  margin-right: 20px;
+}
+
+.final-page .share {
+  display: inline-block;
+  cursor: pointer;
 }
 
 .reset-button {
