@@ -15,7 +15,7 @@ const FinalPage = ({ marks, selectedAnswers, questions, handleReset }) => {
         <h2>
           Your Score: {marks} / {questions.length}
         </h2>
-        <Share />
+        <Share marks={marks} />
       </div>
       <button className="reset-button" onClick={handleReset}>
         Reset
